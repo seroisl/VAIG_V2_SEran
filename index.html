@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moschee Salmsach - VAIG</title>
     
+    <link rel="icon" type="image/png" href="VAIG_V2.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -119,7 +121,7 @@
                         </div>
                     </div>
 
-                    <a href="#kontakt" class="text-gray-600 hover:text-moschee font-medium transition-colors">Kontakt</a>
+                    <a href="#" onclick="switchTab('kontakt')" class="text-gray-600 hover:text-moschee font-medium transition-colors">Kontakt</a>
                     
                     <a href="#" onclick="switchTab('home'); setTimeout(() => document.getElementById('gebetszeiten').scrollIntoView(), 100);" class="bg-moschee text-white px-6 py-2.5 rounded-full font-medium hover:bg-moscheeDark transition-colors shadow-md shadow-moschee/30">
                         Gebetszeiten
@@ -159,7 +161,7 @@
                     <a href="#" onclick="switchTab('hajj')" class="block py-2 text-base font-medium text-gray-600 pl-2 border-l-2 border-transparent hover:border-moschee hover:text-moschee">5. Hajj (Pilgerfahrt)</a>
                 </div>
 
-                <a href="#kontakt" class="block px-3 py-3 rounded-xl text-base font-medium text-gray-600 hover:bg-gray-50">Kontakt</a>
+                <a href="#" onclick="switchTab('kontakt')" class="block px-3 py-3 rounded-xl text-base font-medium text-gray-600 hover:bg-gray-50">Kontakt</a>
             </div>
         </div>
     </nav>
@@ -169,7 +171,7 @@
         <div id="view-home" class="block">
             <div class="relative bg-gray-900">
                 <div class="absolute inset-0 z-0">
-                    <img src="hero-bg.jpeg" alt="Innenraum Moschee Salmsach" class="w-full h-full object-cover">
+                    <img src="hintergrund_startseite_2.png" alt="Innenraum Moschee Salmsach" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gray-900/75 mix-blend-multiply"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
                 </div>
@@ -266,20 +268,26 @@
         </div>
 
         <div id="view-vorstand" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">Unser Team</h1>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Die Menschen hinter dem Verein der Albanisch-Islamischen Gemeinschaft in Salmsach. Wir sind jederzeit für Sie da.</p>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
                 </div>
-            </section>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-md">Unser Team</h1>
+                        <p class="text-lg text-gray-300 max-w-2xl mx-auto">Die Menschen hinter dem Verein der Albanisch-Islamischen Gemeinschaft in Salmsach. Wir sind jederzeit für Sie da.</p>
+                    </div>
+                </section>
+            </div>
             
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="mb-20 flex flex-col items-center">
                     <h2 class="text-2xl font-bold text-gray-900 mb-8 border-b-2 border-moschee inline-block pb-2">Imam</h2>
                     <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow w-full max-w-md flex flex-col items-center text-center relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-full h-2 bg-moschee"></div>
-                        <img src="Imam.png" alt="Osmani Midjit - Imam" class="w-28 h-28 rounded-full object-cover mb-5 border-4 border-white shadow-md ring-2 ring-moscheeBg">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Osmani Midjit</h3>
+                        <img src="Imam.png" alt="Osmani Mixhit - Imam" class="w-28 h-28 rounded-full object-cover mb-5 border-4 border-white shadow-md ring-2 ring-moscheeBg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-1">Osmani Mixhit</h3>
                         <p class="text-gray-500 font-medium mb-8">Imam</p>
                         <a href="tel:+41788588805" class="w-full flex items-center justify-center gap-2 bg-gray-50 hover:bg-moscheeBg text-gray-700 hover:text-moschee py-4 px-4 rounded-2xl transition-colors font-medium border border-gray-100">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
@@ -294,7 +302,7 @@
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col relative overflow-hidden">
                             <div class="absolute top-0 left-0 w-1 h-full bg-moschee"></div>
                             <div class="flex items-center gap-4 mb-6 pl-2">
-                                <div class="w-14 h-14 bg-moscheeBg text-moschee rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">IA</div>
+                                <img src="arafat_profile.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Ibraimi Arafat</h3>
                                     <p class="text-moschee text-sm font-medium">Präsident</p>
@@ -306,7 +314,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">SK</div>
+                                <img src="kadir_profile.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Saduli Kadir</h3>
                                     <p class="text-gray-500 text-sm font-medium">Vize-Präsident</p>
@@ -318,7 +326,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">IJ</div>
+                                <img src="Platzhalter_person.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Ismani Jonuz</h3>
                                     <p class="text-gray-500 text-sm font-medium">Kassier</p>
@@ -330,7 +338,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">AB</div>
+                                <img src="Platzhalter_person.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Abazi Besir</h3>
                                     <p class="text-gray-500 text-sm font-medium">Aktuar</p>
@@ -342,7 +350,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">LS</div>
+                                <img src="Platzhalter_person.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Leci Sadat</h3>
                                     <p class="text-gray-500 text-sm font-medium">Eventmanager</p>
@@ -354,7 +362,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">ME</div>
+                                <img src="Platzhalter_person.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Mustafi Elgadaf</h3>
                                     <p class="text-gray-500 text-sm font-medium">Gebäudetechniker</p>
@@ -366,7 +374,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">AS</div>
+                                <img src="Platzhalter_person.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Alili Sherefedin</h3>
                                     <p class="text-gray-500 text-sm font-medium">Hauswart</p>
@@ -378,7 +386,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">IA</div>
+                                <img src="Platzhalter_person.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Ismaili Arbin</h3>
                                     <p class="text-gray-500 text-sm font-medium">Hauswart</p>
@@ -390,7 +398,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">SA</div>
+                                <img src="Platzhalter_person.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Salai Abdilgafar</h3>
                                     <p class="text-gray-500 text-sm font-medium">Cafeteria</p>
@@ -402,7 +410,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">IA</div>
+                                <img src="Platzhalter_person.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Ismani Armir</h3>
                                     <p class="text-gray-500 text-sm font-medium">Cafeteria</p>
@@ -414,7 +422,7 @@
                         </div>
                         <div class="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all flex flex-col">
                             <div class="flex items-center gap-4 mb-6">
-                                <div class="w-14 h-14 bg-gray-50 text-gray-400 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">MS</div>
+                                <img src="Platzhalter_person.png" alt="Platzhalter" class="w-14 h-14 rounded-full object-cover flex-shrink-0 border border-gray-200">
                                 <div>
                                     <h3 class="text-lg font-bold text-gray-900 leading-tight">Musliu Semir</h3>
                                     <p class="text-gray-500 text-sm font-medium">Berater</p>
@@ -430,12 +438,18 @@
         </div>
 
         <div id="view-mitgliedschaft" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">Mitgliedschaft</h1>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Werden Sie Teil einer lebendigen Gemeinschaft, die auf Zusammenhalt, Respekt und Toleranz setzt.</p>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
                 </div>
-            </section>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-md">Mitgliedschaft</h1>
+                        <p class="text-lg text-gray-300 max-w-2xl mx-auto">Werden Sie Teil einer lebendigen Gemeinschaft, die auf Zusammenhalt, Respekt und Toleranz setzt.</p>
+                    </div>
+                </section>
+            </div>
             
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -457,41 +471,47 @@
 
                     <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6">Jetzt anmelden</h3>
-                        <form name="Mitgliedschaft" method="POST" data-netlify="true" class="space-y-5">
+                        
+                        <form action="https://formsubmit.co/hallo.si@icloud.com" method="POST" class="space-y-5">
+                            
+                            <input type="hidden" name="_subject" value="Neuer Mitgliedschaftsantrag VAIG">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Vorname *</label>
-                                    <input type="text" name="vorname" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
+                                    <input type="text" name="Vorname" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Nachname *</label>
-                                    <input type="text" name="nachname" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
+                                    <input type="text" name="Nachname" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Adresse *</label>
-                                <input type="text" name="adresse" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
+                                <input type="text" name="Adresse" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-1">PLZ / Ort *</label>
-                                    <input type="text" name="plz_ort" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
+                                    <input type="text" name="PLZ_Ort" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-1">Telefon *</label>
-                                    <input type="tel" name="telefon" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
+                                    <input type="tel" name="Telefon" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">E-Mail *</label>
-                                <input type="email" name="email" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
+                                <input type="email" name="Email" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">Nachricht</label>
-                                <textarea name="nachricht" rows="3" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors"></textarea>
+                                <textarea name="Nachricht" rows="3" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors"></textarea>
                             </div>
                             <div class="flex items-start mt-4">
-                                <input type="checkbox" name="datenschutz_akzeptiert" id="privacy" class="mt-1 w-4 h-4 text-moschee bg-gray-100 border-gray-300 rounded focus:ring-moschee" required>
+                                <input type="checkbox" name="Datenschutz_akzeptiert" value="Ja" id="privacy" class="mt-1 w-4 h-4 text-moschee bg-gray-100 border-gray-300 rounded focus:ring-moschee" required>
                                 <label for="privacy" class="ml-2 text-sm text-gray-600">Ich akzeptiere die Datenschutzerklärung des Vereins.</label>
                             </div>
                             <button type="submit" class="w-full bg-moschee text-white font-bold rounded-xl px-4 py-4 hover:bg-moscheeDark transition-colors mt-6 shadow-md shadow-moschee/20">
@@ -504,12 +524,18 @@
         </div>
 
         <div id="view-geschichte" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span class="text-moschee font-semibold tracking-wide uppercase text-sm mb-4 block">Seit den 1990er-Jahren</span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">Unsere Geschichte</h1>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
                 </div>
-            </section>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <span class="text-gray-300 font-semibold tracking-wide uppercase text-sm mb-4 block">Seit den 1990er-Jahren</span>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-md">Unsere Geschichte</h1>
+                    </div>
+                </section>
+            </div>
             
             <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 prose-custom">
                 <p class="text-xl font-medium text-gray-700 leading-relaxed">
@@ -542,95 +568,378 @@
         </div>
 
         <div id="view-shahada" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span class="text-moschee font-semibold tracking-wide uppercase text-sm mb-2 block">1. Säule des Islams</span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Shahada</h1>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
                 </div>
-            </section>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <span class="text-gray-300 font-semibold tracking-wide uppercase text-sm mb-2 block">1. Säule des Islams</span>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">Shahada</h1>
+                    </div>
+                </section>
+            </div>
+            
             <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 prose-custom">
                     <div class="text-center mb-10">
                         <span class="text-2xl font-bold text-gray-900 block mb-2">Glaubensbekenntnis</span>
+                        <p class="text-xl text-moschee font-medium italic">„ashadualla ilaha illallah wa ashhadu anna muhammadarrasulullah.“</p>
                         <p class="text-xl text-moschee font-medium italic">„Es gibt keinen Gott ausser Allah, und Mohammed ist der Gesandte Allahs.“</p>
                     </div>
                     <p>Das Bekenntnis des Glaubens, dass es keinen Gott ausser Allah gibt und dass Mohammed sein Gesandter ist. Die Shahada ist der wichtigste Ausdruck des Glaubens im Islam und das Fundament für alle weiteren Handlungen.</p>
+                    
+                    <h3 class="border-t border-gray-100 pt-8 mt-8">Das arabische Alphabet (Kuransprache)</h3>
+                    <p>Das arabische Alphabet besteht aus 28 Buchstaben, die von rechts nach links gelesen werden. Im Deutschen ist es eine Herausforderung, die Buchstaben direkt zu übersetzen, da sie bestimmte Laute repräsentieren. Hier ist eine grobe Übersicht in deutscher Lautschrift:</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6 text-sm">
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ا</span> Alif - „A“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ب</span> Ba - „B“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ت</span> Ta - „T“ </div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ث</span> Tha - „Th“ (wie in „dank“)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ج</span> Jim - „Dsch“ (wie in „Dschungel“)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ح</span> Haa - „H“ (starkes, kehliges „H“)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">خ</span> Khaa - „Ch“ (wie das „ch“ in „Bach“)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">د</span> Dal - „D“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ذ</span> Dhal - „Dh“ (wie in „this“)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ر</span> Ra - „R“ (gerollt)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ز</span> Zay - „Z“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">س</span> Seen - „S“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ش</span> Sheen - „Sch“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ص</span> Saad - „S“ (stark)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ض</span> Daad - „D“ (stark)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ط</span> Taa - „T“ (stark)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ظ</span> Zaa - „Z“ (stark)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ع</span> Ayn - Kein äquivalenter Laut im Deutschen, es ist ein kehliger Laut</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">غ</span> Ghayn - Ein kehliger „R“-Laut, ähnlich dem französischen „r“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ف</span> Fa - „F“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ق</span> Qaaf - Ein starker „K“-Laut, ähnlich „K“ im Deutschen, aber weiter hinten im Mund ausgesprochen</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ك</span> Kaf - „K“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ل</span> Laam - „L“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">م</span> Meem - „M“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ن</span> Noon - „N“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ه</span> Haa - „H“</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">و</span> Waw - „W“ oder „O“ (je nach Kontext)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ي</span> Yaa - „J“ oder „I“ (je nach Kontext)</div>
+                    </div>
+
+                    <h3 class="border-t border-gray-100 pt-8 mt-8">Zusätzliche Zeichen</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 text-sm">
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ء</span> Hamza - Ein glottaler Stop (wie das „H“ in „uh-oh“)</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">َ</span> Fatha - Ein kurzer „a“-Laut</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ِ</span> Kasra - Ein kurzer „i“-Laut</div>
+                        <div class="p-3 bg-gray-50 rounded-lg"><span class="text-moschee font-bold text-lg mr-2">ُ</span> Damma - Ein kurzer „u“-Laut</div>
+                    </div>
+
+                    <div class="mt-8 pt-4 border-t border-gray-100 text-gray-600">
+                        <p class="mb-4">Das arabische Alphabet hat eine Besonderheit: Die Buchstaben können je nach ihrer Position im Wort unterschiedliche Formen annehmen (am Anfang, in der Mitte oder am Ende eines Wortes).</p>
+                        <p>Diese Übersetzung gibt dir eine grobe Vorstellung davon, wie die Buchstaben im Deutschen ausgesprochen werden, auch wenn einige arabische Laute keine direkten Entsprechungen in der deutschen Sprache haben.</p>
+                    </div>
+
                 </div>
             </section>
         </div>
 
         <div id="view-salat" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span class="text-moschee font-semibold tracking-wide uppercase text-sm mb-2 block">2. Säule des Islams</span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Salat</h1>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
                 </div>
-            </section>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <span class="text-gray-300 font-semibold tracking-wide uppercase text-sm mb-2 block">2. Säule des Islams</span>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">Salat</h1>
+                    </div>
+                </section>
+            </div>
+            
             <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 prose-custom">
                     <h3 class="!mt-0">Das rituelle Gebet</h3>
                     <p>Das Salat (Gebet) ist die zweite Säule des Islams und bildet die direkte und spirituelle Verbindung zwischen dem Gläubigen und Allah. Es ist die Pflicht jedes erwachsenen und gesunden Muslims, fünfmal am Tag zu beten. Diese Gebete strukturieren den Tag und erinnern den Menschen stets an seinen Schöpfer und seine Verantwortung.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                        <div class="border border-gray-100 p-5 rounded-2xl bg-gray-50">
+                            <h4 class="font-bold text-gray-900 mb-2">Die 5 täglichen Gebete</h4>
+                            <ul class="text-sm text-gray-600 space-y-2 list-none">
+                                <li><strong>Fadschr:</strong> Morgendämmerung</li>
+                                <li><strong>Zuhr:</strong> Mittag</li>
+                                <li><strong>Asr:</strong> Nachmittag</li>
+                                <li><strong>Maghrib:</strong> Sonnenuntergang</li>
+                                <li><strong>Ischa:</strong> Nacht</li>
+                            </ul>
+                        </div>
+                        <div class="border border-gray-100 p-5 rounded-2xl bg-gray-50">
+                            <h4 class="font-bold text-gray-900 mb-2">Das Freitagsgebet (Jumu'ah)</h4>
+                            <p class="text-sm text-gray-600">Das Freitagsgebet ist ein besonderes Gemeinschaftsgebet, das anstelle des Mittagsgebets in der Moschee verrichtet wird. Es beinhaltet eine Predigt (Khutbah) des Imams und stärkt den Zusammenhalt der Gemeinde.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
 
         <div id="view-zakat" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span class="text-moschee font-semibold tracking-wide uppercase text-sm mb-2 block">3. Säule des Islams</span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Zakat</h1>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
                 </div>
-            </section>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <span class="text-gray-300 font-semibold tracking-wide uppercase text-sm mb-2 block">3. Säule des Islams</span>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">Zakat</h1>
+                    </div>
+                </section>
+            </div>
+            
             <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 prose-custom">
                     <h3 class="!mt-0">Die soziale Pflichtabgabe</h3>
-                    <p>Zakat bedeutet wörtlich „Reinigung“ oder „Wachstum“. Es ist die verpflichtende Sozialabgabe (Almosen) für alle Muslime, die über ein gewisses Mindestvermögen (Nisab) verfügen, das ein volles Jahr unangetastet geblieben ist.</p>
+                    <p>Zakat bedeutet wörtlich „Reinigung“ oder „Wachstum“. Es ist die verpflichtende Sozialabgabe (Almosen) für alle Muslime, die über ein gewisses Mindestvermögen (Nisab) verfügen, das ein volles Jahr unangetastet geblieben ist. Indem ein Muslim einen kleinen Teil seines Reichtums teilt, reinigt er sein restliches Vermögen und drückt seine Dankbarkeit gegenüber Allah aus.</p>
+                    
+                    <h3>Wem kommt die Zakat zugute?</h3>
+                    <p>Üblicherweise beträgt die Zakat 2,5 % des ruhenden Vermögens. Das gesammelte Geld ist strikt zweckgebunden und wird genutzt, um soziale Ungerechtigkeiten auszugleichen. Zu den Empfängern gehören unter anderem Arme, Bedürftige, Verschuldete und Reisende in Not.</p>
+                    <p>Die Zakat ist nicht nur eine finanzielle Pflicht, sondern ein tiefgreifender Akt der Solidarität, der Gier bekämpft und den Zusammenhalt in der Gesellschaft stärkt.</p>
                 </div>
             </section>
         </div>
 
         <div id="view-sawm" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span class="text-moschee font-semibold tracking-wide uppercase text-sm mb-2 block">4. Säule des Islams</span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Sawm</h1>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
                 </div>
-            </section>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <span class="text-gray-300 font-semibold tracking-wide uppercase text-sm mb-2 block">4. Säule des Islams</span>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">Sawm</h1>
+                    </div>
+                </section>
+            </div>
+            
             <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 prose-custom">
                     <h3 class="!mt-0">Das Fasten im Ramadan</h3>
-                    <p>Sawm beschreibt das Fasten während des heiligen Monats Ramadan. In dieser Zeit verzichten gesunde, erwachsene Muslime von der Morgendämmerung (Fadschr) bis zum Sonnenuntergang (Maghrib) vollständig auf Essen, Trinken und den Beischlaf.</p>
+                    <p>Sawm beschreibt das Fasten während des heiligen Monats Ramadan, dem neunten Monat des islamischen Mondkalenders. In dieser Zeit verzichten gesunde, erwachsene Muslime von der Morgendämmerung (Fadschr) bis zum Sonnenuntergang (Maghrib) vollständig auf Essen, Trinken und den Beischlaf.</p>
+                    
+                    <h3>Die spirituelle Bedeutung</h3>
+                    <p>Beim Fasten geht es jedoch um weitaus mehr als nur den physischen Verzicht. Es ist eine Zeit der intensiven inneren Einkehr, des vermehrten Gebets (wie das Tarawih-Gebet am Abend) und des Kuran-Lesens. Es lehrt Selbstdisziplin, Geduld und fördert stark die Empathie für diejenigen Menschen auf der Welt, die täglich an Hunger und Armut leiden.</p>
+                    <p class="text-sm text-gray-500 italic mt-4">Kranke, Reisende, Schwangere oder stillende Mütter sind vom Fasten befreit und holen die Tage entweder später nach oder spenden stattdessen eine Mahlzeit an Bedürftige (Fidya).</p>
                 </div>
             </section>
         </div>
 
         <div id="view-hajj" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <span class="text-moschee font-semibold tracking-wide uppercase text-sm mb-2 block">5. Säule des Islams</span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Hajj</h1>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
                 </div>
-            </section>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <span class="text-gray-300 font-semibold tracking-wide uppercase text-sm mb-2 block">5. Säule des Islams</span>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">Hajj</h1>
+                    </div>
+                </section>
+            </div>
+            
             <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 prose-custom">
                     <h3 class="!mt-0">Die Pilgerfahrt nach Mekka</h3>
-                    <p>Der Hajj ist die grosse Pilgerfahrt zur Kaaba in Mekka, dem heiligsten Ort des Islams. Es ist die fünfte Säule des Glaubens und eine Pflicht für jeden erwachsenen Muslim, der körperlich und finanziell dazu in der Lage ist.</p>
+                    <p>Der Hajj ist die grosse Pilgerfahrt zur Kaaba in Mekka, dem heiligsten Ort des Islams. Es ist die fünfte Säule des Glaubens und eine Pflicht für jeden erwachsenen Muslim, der körperlich und finanziell dazu in der Lage ist, diese Reise mindestens einmal in seinem Leben anzutreten.</p>
+                    
+                    <h3>Gleichheit vor Gott</h3>
+                    <p>Die Pilgerfahrt findet im letzten Monat des islamischen Mondkalenders (Dhu al-Hiddscha). Ein zentrales Element des Hajj ist der Zustand der Weihe (Ihram). Die männlichen Pilger hüllen sich in zwei einfache, ungenähte weisse Tücher. Diese Kleidung symbolisiert absolute Gleichheit – alle weltlichen Unterschiede von Status, Reichtum oder Nationalität fallen weg. Vor Allah sind alle Menschen gleich.</p>
+                    <p>Der Hajj erinnert an die Prüfungen des Propheten Ibrahim (Abraham) und seiner Familie und ist ein tiefes spirituelles Erlebnis, von dem die Pilger gereinigt und im Glauben gestärkt in ihre Heimat zurückkehren.</p>
                 </div>
             </section>
         </div>
 
         <div id="view-impressum" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16"><div class="max-w-7xl mx-auto text-center"><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Impressum</h1></div></section>
-            <section class="max-w-3xl mx-auto py-16 prose-custom"><p><strong>Verein der Albanisch-Islamischen Gemeinschaft (VAIG)</strong><br>Schulstrasse 19<br>8599 Salmsach</p></section>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
+                </div>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">Impressum</h1>
+                    </div>
+                </section>
+            </div>
+            
+            <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 prose-custom">
+                <h3 class="!mt-0">Verantwortlich für den Inhalt</h3>
+                <p>
+                    <strong>Verein der Albanisch-Islamischen Gemeinschaft (VAIG)</strong><br>
+                    Schulstrasse 19<br>
+                    8599 Salmsach
+                </p>
+
+                <h3>Kontakt</h3>
+                <p>
+                    Webseite: <a href="https://www.moscheesalmsach.ch" class="text-moschee hover:underline">www.moscheesalmsach.ch</a><br>
+                    E-Mail: <a href="mailto:info@moscheesalmsach.ch" class="text-moschee hover:underline">info@moscheesalmsach.ch</a>
+                </p>
+
+                <h3>Vereinszweck</h3>
+                <p>
+                    Der Verein der Albanisch-Islamischen Gemeinschaft (VAIG) setzt sich für die Förderung des kulturellen und religiösen Lebens der albanischen muslimischen Gemeinschaft in der Region ein. Er organisiert religiöse, kulturelle und gemeinschaftliche Veranstaltungen und bietet Unterstützung und Beratung für die Mitglieder an.
+                </p>
+
+                <h3>Haftungsausschluss</h3>
+                <p>
+                    Der Verein übernimmt keine Haftung für die Richtigkeit, Vollständigkeit und Aktualität der auf dieser Website bereitgestellten Informationen. Alle Links zu externen Webseiten wurden sorgfältig geprüft, jedoch übernimmt der Verein keine Verantwortung für die Inhalte dieser Seiten.
+                </p>
+
+                <h3>Urheberrecht</h3>
+                <p>
+                    Die Inhalte dieser Website sind urheberrechtlich geschützt. Jegliche Nutzung der Inhalte ohne ausdrückliche Genehmigung ist unzulässig.
+                </p>
+            </section>
         </div>
+
         <div id="view-datenschutz" class="hidden">
-            <section class="bg-moscheeBg/40 border-b border-gray-100 py-12 md:py-16"><div class="max-w-7xl mx-auto text-center"><h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Datenschutzerklärung</h1></div></section>
-            <section class="max-w-3xl mx-auto py-16 prose-custom"><p>Der Verein der Albanisch-Islamischen Gemeinschaft nimmt den Schutz Ihrer persönlichen Daten ernst...</p></section>
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
+                </div>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-md">Datenschutzerklärung</h1>
+                    </div>
+                </section>
+            </div>
+            
+            <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 prose-custom">
+                <p class="text-lg">
+                    Der Verein der Albanisch-Islamischen Gemeinschaft (VAIG), Schulstrasse 19, 8599 Salmsach, nimmt den Schutz Ihrer persönlichen Daten ernst und hält sich an die geltenden Datenschutzbestimmungen. Im Folgenden informieren wir Sie darüber, wie wir Ihre personenbezogenen Daten erheben, verarbeiten und schützen.
+                </p>
+
+                <h3>1. Verantwortliche Stelle</h3>
+                <p>
+                    Verantwortlich für die Datenverarbeitung ist:<br>
+                    Verein der Albanisch-Islamischen Gemeinschaft (VAIG)<br>
+                    Schulstrasse 19<br>
+                    8599 Salmsach<br>
+                    E-Mail: <a href="mailto:info@moscheesalmsach.ch" class="text-moschee hover:underline">info@moscheesalmsach.ch</a>
+                </p>
+
+                <h3>2. Erhebung und Verarbeitung personenbezogener Daten</h3>
+                <p>
+                    Wir erheben personenbezogene Daten nur, wenn Sie Mitglied bei uns werden, eine Einzahlung oder Spende tätigen oder anderweitig mit uns in Kontakt treten. Zu den personenbezogenen Daten, die wir erheben, gehören:
+                </p>
+                <ul class="list-disc pl-5 text-gray-600 mb-6">
+                    <li>Name</li>
+                    <li>Adresse</li>
+                    <li>E-Mail-Adresse</li>
+                    <li>Telefonnummer</li>
+                    <li>Zahlungsinformationen (bei Spenden oder Mitgliedsbeiträgen)</li>
+                </ul>
+
+                <h3>3. Verwendung der Daten</h3>
+                <p>Wir verarbeiten Ihre Daten ausschliesslich zu den folgenden Zwecken:</p>
+                <ul class="list-disc pl-5 text-gray-600 mb-6">
+                    <li><strong>Mitgliedschaftsverwaltung:</strong> Zur Bearbeitung Ihrer Mitgliedschaft und für die Kommunikation im Rahmen der Mitgliedschaft.</li>
+                    <li><strong>Spenden und Zahlungen:</strong> Zur Abwicklung von Zahlungen und Spenden sowie für die Ausstellung von Spendenbestätigungen, falls gewünscht.</li>
+                    <li><strong>Kommunikation:</strong> Zur Kontaktaufnahme im Zusammenhang mit Veranstaltungen, Informationen oder anderen relevanten Themen des Vereins.</li>
+                </ul>
+
+                <h3>4. Keine Verwendung von Cookies</h3>
+                <p>Wir verwenden auf unserer Webseite keine Cookies. Es werden keine Daten zu Analyse- oder Marketingzwecken gespeichert.</p>
+
+                <h3>5. Datenweitergabe</h3>
+                <p>Ihre personenbezogenen Daten werden nicht an Dritte weitergegeben, es sei denn, dies ist gesetzlich erforderlich oder Sie haben ausdrücklich zugestimmt. Dies gilt insbesondere für Ihre Zahlungsinformationen, die nur zur Abwicklung Ihrer Zahlungen und Spenden verwendet werden.</p>
+
+                <h3>6. Datensicherheit</h3>
+                <p>Wir ergreifen alle notwendigen technischen und organisatorischen Massnahmen, um Ihre personenbezogenen Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.</p>
+
+                <h3>7. Speicherung der Daten</h3>
+                <p>Ihre personenbezogenen Daten werden nur so lange gespeichert, wie es für die Erfüllung der oben genannten Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Sobald diese Zwecke erfüllt sind oder die gesetzliche Aufbewahrungsfrist abgelaufen ist, werden Ihre Daten gelöscht.</p>
+
+                <h3>8. Ihre Rechte</h3>
+                <p>Sie haben das Recht:</p>
+                <ul class="list-disc pl-5 text-gray-600 mb-6">
+                    <li><strong>Auskunft:</strong> Sie können jederzeit Auskunft über die bei uns gespeicherten personenbezogenen Daten verlangen.</li>
+                    <li><strong>Berichtigung:</strong> Sollten Ihre Daten unrichtig oder unvollständig sein, können Sie deren Berichtigung verlangen.</li>
+                    <li><strong>Löschung:</strong> Sie können die Löschung Ihrer personenbezogenen Daten verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
+                    <li><strong>Widerspruch:</strong> Sie können der Verarbeitung Ihrer personenbezogenen Daten widersprechen, wenn die Verarbeitung nicht auf einer gesetzlichen Grundlage beruht.</li>
+                </ul>
+
+                <h3>9. Kontakt</h3>
+                <p>Für Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte können Sie uns jederzeit unter den oben angegebenen Kontaktdaten erreichen.</p>
+
+                <h3>10. Änderungen der Datenschutzerklärung</h3>
+                <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu ändern, um sie an aktuelle gesetzliche Anforderungen anzupassen oder um Änderungen unserer Dienstleistungen umzusetzen. Die jeweils aktuelle Version ist auf unserer Webseite veröffentlicht.</p>
+                
+                <p class="text-sm text-gray-400 mt-8">Stand: März 2025</p>
+            </section>
+        </div>
+
+        <!-- NEUE ANSICHT: KONTAKT -->
+        <div id="view-kontakt" class="hidden">
+            <div class="relative bg-gray-900">
+                <div class="absolute inset-0 z-0">
+                    <img src="hintergrund_startseite_2.png" alt="Hintergrund Moschee" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gray-900/80 mix-blend-multiply"></div>
+                </div>
+                <section class="relative z-10 py-12 md:py-16 border-b border-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-md">Kontakt</h1>
+                        <p class="text-lg text-gray-300 max-w-2xl mx-auto">Treten Sie mit uns in Verbindung. Wir beantworten Ihre Anfrage so schnell wie möglich.</p>
+                    </div>
+                </section>
+            </div>
+            
+            <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Schreiben Sie uns</h3>
+                    
+                    <form action="https://formsubmit.co/hallo.si@icloud.com" method="POST" class="space-y-5">
+                        
+                        <input type="hidden" name="_subject" value="Neue Kontaktanfrage VAIG">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Vorname *</label>
+                                <input type="text" name="Vorname" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nachname *</label>
+                                <input type="text" name="Nachname" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Betreff *</label>
+                            <input type="text" name="Betreff" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nachricht *</label>
+                            <textarea name="Nachricht" rows="6" maxlength="1000" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-moschee focus:ring-1 focus:ring-moschee transition-colors" placeholder="Ihre Nachricht (Maximal 1000 Zeichen)" required></textarea>
+                            <p class="text-xs text-gray-400 mt-1 text-right">Max. 1000 Zeichen</p>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-moschee text-white font-bold rounded-xl px-4 py-4 hover:bg-moscheeDark transition-colors mt-6 shadow-md shadow-moschee/20">
+                            Nachricht absenden
+                        </button>
+                    </form>
+                </div>
+            </section>
         </div>
 
     </main>
 
-    <footer id="kontakt" class="bg-white pt-16 pb-8 border-t border-gray-100">
+    <!-- Der Footer bekommt nun die ID "footer", damit es keine Verwechslung mit der Kontakt-Seite gibt -->
+    <footer id="footer" class="bg-white pt-16 pb-8 border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                 <div>
@@ -690,12 +999,13 @@
                 });
             });
 
-            // Lade Gebetszeiten direkt nach dem Laden der Seite
+            // Lade Gebetszeiten
             fetchPrayerTimes();
         });
 
         function switchTab(tabId) {
-            const views = ['home', 'vorstand', 'mitgliedschaft', 'geschichte', 'shahada', 'salat', 'zakat', 'sawm', 'hajj', 'impressum', 'datenschutz'];
+            // "kontakt" im Array der Views hinzugefügt
+            const views = ['home', 'vorstand', 'mitgliedschaft', 'geschichte', 'shahada', 'salat', 'zakat', 'sawm', 'hajj', 'impressum', 'datenschutz', 'kontakt'];
             views.forEach(view => {
                 const el = document.getElementById('view-' + view);
                 if (el) { el.classList.add('hidden'); el.classList.remove('block'); }
@@ -720,21 +1030,17 @@
 
         async function fetchPrayerTimes() {
             try {
-                // Aladhan API - Exakte Berechnung für Salmsach (Method 3: Muslim World League ist ein guter Standard)
                 const response = await fetch('https://api.aladhan.com/v1/timingsByCity?city=Salmsach&country=Switzerland&method=3');
                 const data = await response.json();
                 prayerTimings = data.data.timings;
 
-                // UI mit Zeiten updaten
                 prayerConfig.forEach(prayer => {
                     document.getElementById('time-' + prayer.id).innerText = prayerTimings[prayer.apiKey];
                 });
 
-                // Lade-Indikator verstecken, Content anzeigen
                 document.getElementById('loading-prayer').classList.add('hidden');
                 document.getElementById('prayer-content').classList.remove('hidden');
 
-                // Countdown starten
                 startCountdown();
                 countdownInterval = setInterval(startCountdown, 1000);
 
@@ -755,7 +1061,6 @@
             const now = new Date();
             let nextPrayerIndex = -1;
 
-            // Finde das nächste anstehende Gebet für heute
             for (let i = 0; i < prayerConfig.length; i++) {
                 const prayerTime = parseTimeString(prayerTimings[prayerConfig[i].apiKey]);
                 if (now < prayerTime) {
@@ -767,35 +1072,29 @@
             let nextPrayerDate;
             let targetPrayer;
 
-            // Wenn die Zeit nach dem letzten Gebet (Isha) ist, ist das nächste Gebet Fajr am nächsten Tag
             if (nextPrayerIndex === -1) {
-                targetPrayer = prayerConfig[0]; // Fajr
+                targetPrayer = prayerConfig[0];
                 nextPrayerDate = parseTimeString(prayerTimings[targetPrayer.apiKey]);
-                nextPrayerDate.setDate(nextPrayerDate.getDate() + 1); // Ein Tag addieren
+                nextPrayerDate.setDate(nextPrayerDate.getDate() + 1); 
             } else {
                 targetPrayer = prayerConfig[nextPrayerIndex];
                 nextPrayerDate = parseTimeString(prayerTimings[targetPrayer.apiKey]);
             }
 
-            // Differenz berechnen
             const diffMs = nextPrayerDate - now;
             const diffHrs = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
             const diffSecs = Math.floor((diffMs % (1000 * 60)) / 1000);
 
-            // Timer in UI schreiben
             document.getElementById('next-prayer-name').innerText = targetPrayer.name;
             document.getElementById('countdown-timer').innerText = 
                 String(diffHrs).padStart(2, '0') + ':' + 
                 String(diffMins).padStart(2, '0') + ':' + 
                 String(diffSecs).padStart(2, '0');
 
-            // --- Aktuelles Gebet visuell hervorheben ---
-            // Finde heraus, in welcher Gebetsperiode wir uns aktuell befinden
             let currentPrayerIndex = nextPrayerIndex === -1 ? prayerConfig.length - 1 : nextPrayerIndex - 1;
-            if(currentPrayerIndex < 0) currentPrayerIndex = prayerConfig.length - 1; // Vor Fajr ist noch Isha Periode
+            if(currentPrayerIndex < 0) currentPrayerIndex = prayerConfig.length - 1; 
 
-            // Styling für alle Karten zurücksetzen
             prayerConfig.forEach((prayer, index) => {
                 const card = document.getElementById('card-' + prayer.id);
                 const badge = document.getElementById('badge-' + prayer.id);
@@ -803,7 +1102,6 @@
                 const time = document.getElementById('time-' + prayer.id);
 
                 if (index === currentPrayerIndex && prayer.id !== 'sunrise') {
-                    // Aktives Styling
                     card.classList.add('bg-moschee', 'text-white', 'shadow-md', 'md:-translate-y-2');
                     card.classList.remove('bg-white', 'shadow-sm');
                     if(badge) badge.classList.remove('hidden');
@@ -812,7 +1110,6 @@
                     time.classList.remove('text-gray-900', 'text-gray-500');
                     time.classList.add('text-white');
                 } else {
-                    // Standard Styling
                     card.classList.remove('bg-moschee', 'text-white', 'shadow-md', 'md:-translate-y-2');
                     card.classList.add('bg-white', 'shadow-sm');
                     if(badge) badge.classList.add('hidden');
